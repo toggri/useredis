@@ -14,3 +14,5 @@ True
 >>> r.get('key')
 b'value'
 ```
+
+참고 : https://pypi.org/project/redis/
