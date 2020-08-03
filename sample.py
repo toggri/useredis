@@ -1,5 +1,19 @@
-import redis
+#!/usr/bin/python3.4
 
-r = redis.Redis(host='1.1.1.1',port=6379,db=0,password='PASSWORD')
-r.set('key','value')
-r.get('key')
+import redis
+import pymysql
+import config
+
+r=redis.Redis(host=config.RHOST,port=config.RPORT,db=config.RDB,password=config.RPASSWORD)
+KEY='key'
+VAL='value'
+r.setnx(KEY,VAL)
+rval = r.get(KEY)
+print("Redis Data {} => {} ".format(KEY,rval))
+
+db=pymysql.connect(config.MHOST,config.MUSER,config.MPASSWORD,config.MDB)
+cur=db.cursor()
+cur.execute("select version()")
+data = cur.fetchone()
+print("Database version {}".format(data))
+db.close()
