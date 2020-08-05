@@ -10,4 +10,4 @@ MUSER="USER"
 MPASSWORD="PWD"
 MDB="DBNAME"
 
-QUERY="SELECT field1 FROM tablename "
+QUERY="SELECT field1,field2 FROM tablename "
