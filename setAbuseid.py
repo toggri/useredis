@@ -30,11 +30,14 @@ try:
    for d in data:
       # d[] : ai_userid, sns_type
       if d[1] == '3':
-         # twitter
+         # twitter 3
          aid="{}_{}".format(TW_PKEY,d[0].strip())
-      else:
-         # instagram
+      else if d[1] == '4':
+         # instagram 4
          aid="{}_{}".format(IT_PKEY,d[0].strip())
+      else:
+         # twitter 3
+         aid="{}_{}".format(TW_PKEY,d[0].strip())
 
       print("{}".format(aid))
 
