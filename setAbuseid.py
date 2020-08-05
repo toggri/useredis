@@ -32,7 +32,7 @@ try:
       if d[1] == '3':
          # twitter 3
          aid="{}_{}".format(TW_PKEY,d[0].strip())
-      else if d[1] == '4':
+      elif d[1] == '4':
          # instagram 4
          aid="{}_{}".format(IT_PKEY,d[0].strip())
       else:
